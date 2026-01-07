@@ -8,7 +8,7 @@ Motivated Computer Science graduate passionate about building intelligent system
 
 🌍 Dhaka, Bangladesh  
 📧 mawamukta1234@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/jannatul-mawa-mukta-0bb1142a5) | [GitHub](https://github.com/Jannatulmawa20) | [Portfolio Website]([https://jannatulmawa20.github.io/](https://jannatulmawa20.github.io/AI-ML-Portfolio/)) <!-- Update with your custom domain later -->
+🔗 [LinkedIn](https://www.linkedin.com/in/jannatul-mawa-mukta-0bb1142a5) | [GitHub](https://github.com/Jannatulmawa20) | [Portfolio Website](https://jannatulmawa20.github.io/AI-ML-Portfolio/) <!-- Update with your custom domain later -->
 
 ---
 
