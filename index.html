@@ -1,353 +1,131 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jannatul Mawa - AI/ML Developer Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #0d6efd;    /* Bootstrap blue */
-            --dark: #121212;
-            --darker: #0a0a0a;
-            --light-text: #e0e0e0;
-            --gray: #2d2d2d;
-            --accent: #1d8cf8;
-        }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--dark);
-            color: var(--light-text);
-            line-height: 1.7;
-        }
-        header {
-            background: linear-gradient(135deg, var(--darker), #1a1a2e);
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at center, rgba(13, 110, 253, 0.2), transparent);
-        }
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid var(--primary);
-            object-fit: cover;
-            box-shadow: 0 0 30px rgba(13, 110, 253, 0.5);
-            position: relative;
-            z-index: 1;
-        }
-        h1 {
-            margin: 1rem 0 0.5rem;
-            font-size: 2.8rem;
-            color: white;
-            position: relative;
-            z-index: 1;
-        }
-        .tagline {
-            font-size: 1.2rem;
-            color: #a0aec0;
-            position: relative;
-            z-index: 1;
-        }
-        nav {
-            background-color: var(--darker);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav ul li {
-            margin: 0.5rem 1rem;
-        }
-        nav ul li a {
-            color: var(--light-text);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-        section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        h2 {
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 2.5rem;
-            font-size: 2.2rem;
-            position: relative;
-        }
-        h2::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background: var(--primary);
-            display: block;
-            margin: 1rem auto 0;
-            border-radius: 2px;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .skill-card {
-            background: var(--gray);
-            padding: 1.8rem;
-            border-radius: 12px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.3);
-        }
-        .skill-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        .experience-item, .project-card {
-            background: var(--gray);
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            transition: all 0.3s;
-        }
-        .experience-item:hover, .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.2);
-        }
-        .project-links {
-            margin-top: 1.5rem;
-        }
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-right: 1rem;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-        .btn:hover {
-            background: #0b5ed7;
-        }
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--primary);
-        }
-        .btn-secondary:hover {
-            background: var(--primary);
-        }
-        footer {
-            background: var(--darker);
-            color: #888;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-        .social-links a {
-            color: var(--light-text);
-            font-size: 1.5rem;
-            margin: 0 1rem;
-            transition: color 0.3s;
-        }
-        .social-links a:hover {
-            color: var(--primary);
-        }
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            nav ul { flex-direction: column; }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jannatul Mawa — Data &amp; AI Portfolio</title>
+<style>
+:root{
+  --bg:#f7f8fb;--surface:#fff;--text:#16202e;--muted:#5a6578;--accent:#2b5fd9;--accent-soft:#e6edfc;--line:#dfe4ee;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0e131c;--surface:#161d29;--text:#e8edf5;--muted:#9aa6b8;--accent:#7aa2ff;--accent-soft:#1c2a47;--line:#263044;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0e131c;--surface:#161d29;--text:#e8edf5;--muted:#9aa6b8;--accent:#7aa2ff;--accent-soft:#1c2a47;--line:#263044;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+nav{display:flex;gap:18px;flex-wrap:wrap;padding:18px 0;font-size:.92rem}
+nav a{color:var(--muted)}
+.hero{padding:48px 0 36px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.avatar{width:96px;height:96px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:2rem;font-weight:700;flex:none}
+h1{margin:0 0 6px;font-size:clamp(2rem,6vw,3rem);line-height:1.15}
+.tag{color:var(--accent);font-weight:600;margin:0 0 10px}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 18px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{padding:9px 18px;border-radius:8px;border:1px solid var(--accent);font-weight:600;font-size:.92rem}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{text-decoration:none;opacity:.9}
+section{padding:34px 0;border-top:1px solid var(--line)}
+h2{margin:0 0 18px;font-size:1.4rem}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.card h3{margin:0 0 6px;font-size:1.05rem}
+.card p{margin:0 0 10px;color:var(--muted);font-size:.94rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--accent-soft);color:var(--accent);font-size:.78rem;padding:2px 10px;border-radius:99px;font-weight:600}
+.skill h3{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.job{margin-bottom:22px}
+.job-h{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.job b{font-size:1.02rem}
+.job .date{color:var(--muted);font-size:.88rem}
+.job .role{color:var(--accent);font-size:.92rem;margin-bottom:4px}
+.job ul{margin:6px 0 0;padding-left:1.2em;color:var(--muted);font-size:.94rem}
+.edu{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:6px 0}
+.edu span{color:var(--muted);font-size:.92rem}
+footer{padding:28px 0 36px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+</style>
 </head>
 <body>
-    <header>
-        <img src="images/img.jpg" alt="Jannatul Mawa" class="profile-img">
-        <h1>Jannatul Mawa</h1>
-        <p class="tagline">AI/ML/DL Developer</p>
-    </header>
+<div class="wrap">
+<nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<header class="hero">
+  <div class="avatar" aria-hidden="true">JM</div>
+  <div>
+    <h1>Jannatul Mawa</h1>
+    <p class="tag">Data Analyst · ML &amp; AI Developer</p>
+    <p class="lead">I turn data into dashboards, models and practical AI tools — from Power BI reporting to deep learning for medical imaging and RAG-powered chatbots.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">View projects</a>
+      <a class="btn" href="https://github.com/Jannatulmawa20" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/jannatul-mawa-mukta-0bb1142a5" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p style="text-align:center; max-width:800px; margin:0 auto; font-size:1.1rem;">
-            Motivated Computer Science graduate with hands-on experience in Machine Learning and Deep Learning. 
-            Proven ability to develop, train, and evaluate models using Python, TensorFlow, and PyTorch. 
-            Passionate about building intelligent systems, especially RAG pipelines and agentic AI.
-        </p>
-    </section>
+<section id="about">
+  <h2>About</h2>
+  <p>I’m a Computer Science graduate (ISU, 2025) and Certified Excel Specialist with experience in dashboard evaluation, KPI reporting and applied machine learning. I enjoy building end-to-end ML/DL solutions, RAG and LLM-powered applications, and data products with Streamlit — and turning research into tools people can actually use. Based in Dhaka, Bangladesh.</p>
+</section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fab fa-python"></i>
-                <h3>Languages</h3>
-                <p>Python, JavaScript (Node.js)</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-brain"></i>
-                <h3>ML/DL Frameworks</h3>
-                <p>TensorFlow, PyTorch, scikit-learn, OpenCV</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-database"></i>
-                <h3>Data Tools</h3>
-                <p>NumPy, pandas, Git</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-cloud"></i>
-                <h3>Cloud & Others</h3>
-                <p>AWS (Basic), GitHub</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-cloud"></i>
-                <h3>ERP</h3>
-                <p>Oracle ERP, odoo, Excel, Power BI, SQL</p>
-                <p>Modules: Inventory, Procurement, Sales, Finance, HR</p>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card skill"><h3>Languages</h3><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div></div>
+    <div class="card skill"><h3>Data &amp; BI</h3><div class="chips"><span class="chip">Power BI</span><span class="chip">Excel</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">PostgreSQL</span><span class="chip">MySQL</span></div></div>
+    <div class="card skill"><h3>ML &amp; AI</h3><div class="chips"><span class="chip">scikit-learn</span><span class="chip">TensorFlow</span><span class="chip">PyTorch</span><span class="chip">OpenCV</span><span class="chip">RAG</span><span class="chip">Embeddings</span></div></div>
+    <div class="card skill"><h3>Computer Vision</h3><div class="chips"><span class="chip">YOLOv7/v8</span><span class="chip">U-Net</span><span class="chip">ResNet</span><span class="chip">DeepLabV3+</span><span class="chip">Grad-CAM</span></div></div>
+    <div class="card skill"><h3>Dev &amp; Infra</h3><div class="chips"><span class="chip">Git/GitHub</span><span class="chip">Docker</span><span class="chip">Linux</span><span class="chip">AWS (basics)</span><span class="chip">CI/CD</span></div></div>
+    <div class="card skill"><h3>Web</h3><div class="chips"><span class="chip">Django</span><span class="chip">Streamlit</span><span class="chip">React</span><span class="chip">Tailwind</span></div></div>
+  </div>
+</section>
 
-            </div>
-        </div>
-    </section>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card"><h3>Brain Tumor Detection &amp; Segmentation</h3><p>Multi-task deep learning for MRI: detection, classification and segmentation of pituitary, meningioma and glioma subtypes. Benchmarks YOLOv7/v8 against ResNet, VGG, U-Net and DeepLabV3+, with Grad-CAM explainability. Basis of my research paper.</p><div class="chips"><span class="chip">PyTorch</span><span class="chip">OpenCV</span><span class="chip">Grad-CAM</span></div><p style="margin:10px 0 0"><a href="https://github.com/Jannatulmawa20/Brain-Tumour" target="_blank" rel="noopener">View on GitHub →</a></p></div>
+    <div class="card"><h3>RAG Company Policy Chatbot</h3><p>Chatbot that answers internal policy questions from company documents using embeddings and vector search, with a Streamlit interface.</p><div class="chips"><span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">RAG</span><span class="chip">Docker</span></div></div>
+    <div class="card"><h3>Ride-Sharing Price Prediction</h3><p>Fare prediction trained on 100k+ rides, comparing Linear and Random Forest regression, served through a Streamlit app.</p><div class="chips"><span class="chip">scikit-learn</span><span class="chip">Pandas</span><span class="chip">Streamlit</span></div></div>
+    <div class="card"><h3>Blood Bank Management System</h3><p>Donor registration, inventory by blood group, requests, analytics dashboard and role-based access.</p><div class="chips"><span class="chip">Django</span><span class="chip">PostgreSQL</span><span class="chip">JavaScript</span></div></div>
+    <div class="card"><h3>HR Data Analysis</h3><p>Exploratory data analysis of HR datasets to extract workforce trends and insights.</p><div class="chips"><span class="chip">Pandas</span><span class="chip">NumPy</span></div><p style="margin:10px 0 0"><a href="https://github.com/Jannatulmawa20/hr_data_analaysis" target="_blank" rel="noopener">View on GitHub →</a></p></div>
+    <div class="card"><h3>More on GitHub</h3><p>Travel data analysis, K-means clustering, AWS Educate coursework and more.</p><p style="margin:0"><a href="https://github.com/Jannatulmawa20?tab=repositories" target="_blank" rel="noopener">Browse all 25 repositories →</a></p></div>
+  </div>
+</section>
 
-    <section id="experience">
-        <h2>Work Experience</h2>
-         <div class="experience-item">
-            <h3>Intern-ERP</h3>
-            <p>2024(2024-Present)</p>
-            <ul>
-                <li>Managed Purchase & Inventory modules using software ERP</li>
-                <li>Automated stock tracking, reducing manual errors by 30%</li>
-                <li>Generated vendor-wise purchase and sales reports</li>
-                <li>Trained team members on ERP usage</li>
-                <li>Supported Accounts & Sales team with ERP workflows</li>
-            </ul>
-        </div>
-        <div class="experience-item">
-            <h3>Annotator — Product Sense</h3>
-            <p>2024(August to November)</p>
-            <ul>
-                <li>Annotating datasets to support AI and ML projects</li>
-                <li>Ensured high data quality and accuracy for model training</li>
-            </ul>
-        </div>
-        <div class="experience-item">
-            <h3>Research Assistant — International Standard University</h3>
-            <p>2024 – 2025</p>
-            <ul>
-                <li>Conducted literature reviews on emerging CS topics</li>
-                <li>Assisted in developing and analyzing research models & algorithms</li>
-                <li>Supported AI, ML, and data science faculty projects</li>
-            </ul>
-        </div>
-    </section>
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="job"><div class="job-h"><b>SF Denim Apparel LTD</b><span class="date">Dec 2025 – Mar 2026</span></div><div class="role">Data Analysis Intern</div>
+    <ul><li>Managed and analyzed production and inventory data in an ERP system.</li><li>Built Excel analyses (Pivot Tables, VLOOKUP) and Power BI dashboards and reports.</li><li>Applied SQL and Python for processing; ensured accuracy through cleaning, validation and cross-department collaboration.</li></ul></div>
+  <div class="job"><div class="job-h"><b>Product Sense</b><span class="date">Jul 2025 – Nov 2025</span></div><div class="role">AI Data Annotator</div>
+    <ul><li>Annotated datasets for AI and ML projects and ensured data quality for model training.</li></ul></div>
+  <div class="job"><div class="job-h"><b>International Standard University</b><span class="date">Apr 2024 – Mar 2025</span></div><div class="role">Research Assistant</div>
+    <ul><li>Ran literature reviews and supported faculty-led research in AI, machine learning and data science.</li><li>Contributed to research models, data analysis, technical reports and publications.</li></ul></div>
+</section>
 
-    <section id="projects">
-        <h2>Projects</h2>
+<section id="education">
+  <h2>Education &amp; Certificates</h2>
+  <div class="edu"><b>B.Sc. in Computer Science (CSE), International Standard University</b><span>2021–2025 · CGPA 3.29</span></div>
+  <div class="edu"><b>HSC, Chototulagaon Mohila College</b><span>2020 · GPA 4.90</span></div>
+  <div class="edu"><b>SSC, Adda Umedia High School</b><span>2017 · Result 4.09</span></div>
+  <p style="color:var(--muted);margin:14px 0 0">Certificates: Data Science &amp; Machine Learning (Data Solution 360) · Digital Marketing (WIT Institute, Creative IT Institute) · AWS Getting Started with Compute, Storage and Database</p>
+</section>
 
-        <div class="project-card">
-            <h3>RAG-based Company Policy Chatbot</h3>
-            <p>Python • Streamlit • RAG • Vector Search</p>
-            <p>Built an intelligent chatbot that answers questions from internal PDF/text documents using embeddings and retrieval-augmented generation with source citations.</p>
-            <div class="project-links">
-                <a href="https://github.com/Jannatulmawa20/company-policy-rag-chatbot" target="_blank" class="btn">View Code</a>
-                <!-- Add live demo link here if deployed -->
-            </div>
-        </div>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Open to collaboration on data and AI/ML projects.</p>
+  <div class="btns">
+    <a class="btn primary" href="mailto:mawamukta1234@gmail.com">mawamukta1234@gmail.com</a>
+    <a class="btn" href="https://github.com/Jannatulmawa20" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/jannatul-mawa-mukta-0bb1142a5" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</section>
 
-        <div class="project-card">
-            <h3>Ride Sharing Price Prediction System</h3>
-            <p>Python • Scikit-learn • Streamlit</p>
-            <p>Trained multiple ML models on 100k+ ride records and deployed an interactive price prediction tool.</p>
-            <div class="project-links">
-                <a href="https://github.com/Jannatulmawa20/ride-sharing-price-prediction" target="_blank" class="btn">View Code</a>
-                <a href="https://github.com/Jannatulmawa20/Ride-Price-Prediction-App" target="_blank" class="btn btn-secondary">App Repo</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <h3>Brain Tumour Detection (Medical Imaging)</h3>
-            <p>Python • PyTorch/TensorFlow • CNN • YOLO</p>
-            <p>Developed segmentation and detection models on medical imaging datasets with end-to-end training and hyperparameter tuning.</p>
-            <div class="project-links">
-                <a href="https://github.com/Jannatulmawa20/Brain-Tumour" target="_blank" class="btn">View Code</a>
-            </div>
-        </div>
-
-        <p style="text-align:center; margin-top:3rem;">
-            <a href="https://github.com/Jannatulmawa20" target="_blank" style="font-size:1.2rem; color:var(--primary);">
-                Explore all projects on GitHub →
-            </a>
-        </p>
-    </section>
-
-    <section id="education">
-        <h2>Education</h2>
-        <div class="experience-item">
-            <h3>B.Sc. in Computer Science & Engineering</h3>
-            <p>International Standard University (ISU) • 2021 – 2025</p>
-            <p>CGPA: 3.29</p>
-        </div>
-        <div class="experience-item">
-            <h3>Higher Secondary Certificate (HSC)</h3>
-            <p>Chototulagaon Mohila College • 2020</p>
-            <p>GPA: 4.90</p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p style="text-align:center;">
-            <strong>Phone:</strong> 01826708635<br>
-            <strong>Email:</strong> mawamukta1234@gmail.com<br>
-            <strong>Location:</strong> Mohakhali, TB-Gate, Dhaka-1212<br><br>
-            <a href="https://github.com/Jannatulmawa20" target="_blank">GitHub</a> • 
-            <a href="https://www.linkedin.com/in/jannatul-mawa-mukta-0bb1142a5" target="_blank">LinkedIn</a>
-        </p>
-    </section>
-
-    <footer>
-        <p>© 2026 Jannatul Mawa. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://github.com/Jannatulmawa20" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/jannatul-mawa-mukta-0bb1142a5" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </footer>
+<footer>© 2026 Jannatul Mawa · Dhaka, Bangladesh</footer>
+</div>
 </body>
 </html>
